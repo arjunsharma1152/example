@@ -1,0 +1,71 @@
+nav {
+    border: 2px solid grey;
+    border-radius: 20px;
+
+    ul.navbar {
+        border-radius: 10px;
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        margin: 0 2vw;
+
+        li {
+
+            a {
+                text-decoration: none;
+                color: rgb(44, 109, 238);
+                font-weight: bold;
+                display: block;
+                padding: 1vw;
+
+                &:hover {
+                    color: darkblue;
+                }
+            }
+
+            .sublinks {
+                width: 13vw;
+                display: none;
+                background: white;
+                border-radius: 10px;
+                transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+                    0 0 0 2px rgb(190, 190, 190),
+                    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+                border-top: 2px solid grey;
+                position: absolute;
+                background-color: #fff;
+                z-index: 1;
+                padding: 0;
+
+                li {
+                    list-style-type: none;
+                    padding: 0.8vw;
+                    font-size: 1.2vw;
+
+                    &:hover {
+                        font-weight: bold;
+                        cursor: pointer;
+                    }
+
+                    a {
+                        color: #333;
+                        text-decoration: none;
+                        padding: 0;
+                        margin: 2px 0;
+
+                        &:hover {
+                            color: #007bff;
+                        }
+                    }
+                }
+            }
+
+            &:hover .sublinks {
+                display: block;
+            }
+        }
+    }
+}
