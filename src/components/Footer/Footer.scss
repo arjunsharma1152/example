@@ -25,3 +25,14 @@ footer {
 #arjun {
   color: white;
 }
+
+@media screen and (max-width: 750px) {
+
+  footer {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      width: 100vw;
+    }
+  }
+}
