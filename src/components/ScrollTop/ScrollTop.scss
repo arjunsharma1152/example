@@ -1,0 +1,22 @@
+.scroll-to-top-button{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50px;
+    background-color: grey;
+    font-size: 2rem;
+    padding-top: 9px;
+    font-weight: bold;
+
+    &.visible{
+        display: block;
+    }
+
+    &:hover{
+        cursor: pointer;
+    }
+}

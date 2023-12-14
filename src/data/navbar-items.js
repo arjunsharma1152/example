@@ -37,11 +37,11 @@ export const navbarItems = [
     },
     {
         name: 'FACILITIES',
-        to: '/facilties',
+        to: '/facilities',
          sublinks: [
-        { name: 'Labs', to: '/facilties/labs' },
-        { name: 'Sports', to: '/facilties/sports' },
-        { name: 'NCC', to: '/facilties/ncc' },
+        { name: 'Labs', to: '/facilities/labs' },
+        { name: 'Sports', to: '/facilities/sports' },
+        { name: 'NCC', to: '/facilities/ncc' },
       ],
     },
     {
