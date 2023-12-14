@@ -1,27 +1,40 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import './Header.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.scss";
 import Aos from "aos";
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const Header = () => {
-
   useEffect(() => {
     Aos.init();
   }, []);
 
   return (
-    <div className="header">
-      <Link to="/"><img className="awes-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYXPkS0A3dHiEnoy6TEfnAEzhTbFvIZNyCig&usqp=CAU' data-aos="fade-right" data-aos-duration="1000" /></Link>
-      <div className='direction-column'>
-        <div><span id="red">ARMY PUBLIC SCHOOL</span><span id='blue'> BAREILLY CANTONMENT</span></div>
-        <div><img id="g20" src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABpFBMVEX////3lB0Adbuskje3kzOykzaakTu9lDKGkD6BkD/3kAWNkD36w433jQDEky91j0J5j0CTjzyfkTmmkTnclChsjkHKlC7jlCXpkyKp0LgNnNgFkNHwlCD++/bQlCsFldQ+jUYDiMtdizxXjURMjUWbsoQAa7cAhTsAAGcEgcUAesCLjK782rgio9xJrOBltuac0/P94sgyjEcYHHD+8+f6vYBtuuiFxu2Bgqnv7/Xj4+ulpsHT0+Dd6/T7y5797NsAabj4okTB2esAXrLN4vDOjhPZz63p5dOaiSPG0bdhhi6FiSnv9OxBhznW698vhTK6u89cXpEtMHlOUItydKCam7lAQoMHD2vJytmqzOaVvuBwrtlWndD4rWJDlMufxOH4p0xWtuKl1u75tnQ8hsOGs9n5rF3uoD/uwo7jjgnlql3oy6PWpVbVrmzrwpDfnT/GqWPUv4/MtHvTyaLCmkCsol+zjBbg176rr3mapGa+xJ+VgwSwq2/O2cOSrXm+vJBJgCBznmOIt5BlpXS71sEAeh15tI50mFaMsH+nwZ1cm14mKXeiajgKAAAOdElEQVR4nO2ciVvTSB/Hh4iyVuqBCqw2ICi1tBVBipBeQC200KA9oVAoLgIr4nosK4orqCv7AvJPv3MlmaRpi6Z47DOfZx+aTGbS+eZ3zaS7CwCHw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDicnwcpMjtXgKwsRkLfey61R5otdAhuSHd3N/wruOcX/1MqI/PdSFuHCpIpFGe/1feLvj5vONwYDnv7fOIx3D/S4aTqrhIUkYIwJx3D9xkYDi847Ha7DQE/HQvh4apDvI2PHj0aCPf5jvIF0aKA9VF17e2KSuSvgnvRuoRKiOFWKKyOBZ6PhitYcnjAYSPPA3489Fa1ecHpVgS2M1CNbrezeIzx6BswqNNUDpQxz/CCXTfEXheu+BWhZQELVPVduaJppGZ0Hls4NpbRRzQ2HnGIfbSCr0aQPiyQylPQJMLE6lw5Fn19deX1YY11fcYh4qjdrKPdW+47ZkcEIlCVd+vWLU2jIlFwzh+DwEbDZHFgGaxjMKNvtMwzsZfx1Nl7haKbWpDKUyAaNUetuURxlZkszBiO1YHGcOPAKkoizIVV3ZhW7ZINJxtNoqkVIyNzIUFxUUVfT4+qkVix+1isKDqY2TkGmKzv63vk0KxrG2VSpfpQbPbRgbDX27hQp/a0mVSYkHMZdEATMgJ7FFiJHUih4JyrqUDN3eyjJfle9GoaGYlhpdG+oMgRw6odHaXfAmtdt5sGIRbYw4IdFUnECpHESA0Fqu5mazVPEl7VxnbFUX3qQ2ETkPjIZh6zAMw7BVwoSBBSgbcpxIw0FLGbQmq3vFHdzT5Qrl6LA3ajDb2kxWGoDUrGshnaI1BgoVtNM1gglHYXoUgk2Ya66XJ3zUJRzaK2knLAgAXp4pBILCl+1IrG+tkNjTJ7FSm8dZsqxPoGBwexRiqRGBG56XzkXrQ2AvvUIKu8/hw2CIQSbWZJUxylkajruwhNKCwWkcKe0FVV4CCBSCRGpG4KFzbF5VroA8ChCKy2bPYZBCIrrpr0o+5r13kEDqzZFRSGV6W7RCEW2NvbSySSSMS5BiuMFEL3apJs1LipuoMApTspr6lfj5a66SwyoVCYc6NM+htY+g0rJAKJRMaIKBCFolQExeLX69JmXbFGfx1hEokPmaYiEijMIRu2t/cs9UR7icLe3qWlJSTRoFDoDgEJRO7VYJvRSPPCgPVbqdDItmktISdRGMI2hDJ+Q41LdxmFmpuiTEPTqNv6Ely0maUFqzelgai1zBGFHaCDKLx1pRc195rYECpsn8PCpHmw4rY8GSUr1NBHzRQuY4HubjBPbXgLV/MQjUOksGfwLq35HdEIjj/JCaIjlt1UyexW76NjuMRLR4hCYXaebJx66MSj0UEqENo0RG3YLkVwIQw5I5LlzTBdetXWhKWZJkqc1O0uooLYMbikXpGgFVEmxS1RWi3aqf6V2VlnoTZzqavtCzWHsVosEoVQ4vzcnP7lLyn4VHKPsqYhXaTFuWWr9WIBK7Q9sngbPV6bseIXBEUh3hKxEtGSTREIekO3sUI33TmFCsVua3OhC6waO2npqm1eVQirxdUoqzBy++5tZuWy1H4FurFAi4RUdFrcYNAwNG4DrKFUWOZNxrKqEG0udL0luK9QTAiVh9pBpEOphkCS5kasKaRJr87STcrc08bEtqIQ7Q/dhuwIFzfsFgIuBUJEoFRAii2uamg1fGjpJnpEupDX7YA1hW73VcOA0C2dwg7VZQsjEesKw5USzXBjRcq8TlswWySpCgWhu2TGvSFWYrSdSpxzuoEUKVgs+VSh+Zq0j76qN8e+YDqoUXmJodt0FBV9zhWzsOoZVI6iUVAgRX5FgDvEUDR6z1ocUoWmb7OZnbEZ5o/Faze9quRS0xXKMJPJe92FJWEexaDTDc29PBuxmGmq2LCiQjMv7Svzpm2FKjRdoIzamZ1pCCbSKFoEuQXn3Oy9wqzFpTdVaO5wlRWa1VD19ZtxN032v4oJ9RcH7GzMhiIREZ3NOwVnNLoSKVhc01CnGjW9WEVh6e5eSaOl6um6VCBlwL7A1F/0LbpUF7b3FQoRKQqwey5bXJdWrIflMg1VUfrS42GdA2PiwCMk12CX89mZ37HIU9EeSd+ozR5eRLaGOTS6GBqx+KaG7n/NX9EYq8Xjx/hjgMoo6f9krRWzZhLWxUKRpFJAraa8RqbFhS4PfKvYoiGhOO9chg4biTgt7g/F3x14Tl+yLvWutba0tLa2GNsfr7VgWp+YDFoUiKOiqPLSIoxEKZFA/DRMft9bBaEQzaAFy+8TB1rxpL5kb/Gk5RKk5bGheX3tEuG52U5MuhdZQRJR7g8TZ65zQM/53UFBL6NXbeT4oTbOaflHfW8LmdbR94c+MmDMkGj6xtoo5qv4wjxYdgrLKKoaqTe3+kBYOWxt/R0+Owc9VGcz2235pwsfmdjY+pFHrNMR+mcy3NbWjGgbMw1pEf1cF1pZ7kblgPhNS2sjEFs0YKQMUz9nnrfYV/0tbhWewpmhGR+1v3gWK2n+Q9fqa24+ixl7bT6sZW3tyTP6q+QT4s9rw+AZ9SDi3QA8xwctLbifOLz+x6W1NcsKx9vwzNrGj9h/vbmhoeFsw6ZOifjX2QbM5ka5YWPIs8eeP4YqfetPxsaQIvHSJcW12y61Qb9HvcaePxuG6p49uYQ6Id0WERsoR4tEcbMe0VCva33RgFvrN1+WHUeFjEGV61DB+lMYGOtq7GKeoph55kMXYT/avwZvHzbonP88Uu8/608i6jdMGk/WV7jHMxKnJFabXw4Dnw88bdYx5gMxrL2NabSkjSCS2Z3cLBNBOsZPniCwFt+In7iIG19UGOmjgUpobv5rHFrsrI7mlyD2R7O+39EzYKVZxy9evHji4sV4rGrXGOraBLuyUfs63kSp6Oh/nm1gOfsCrG826PkLvDY21eYtpzLBpmoSY01NpxBNr9jG+ClCk1xxsI9Eg0LDS/Ci3kCDL6bvVDZxfSHaHCtLjJ06dQGTYLTIFyiJas/nJY1WGrPjYPOkgc2YqG+rr3LLIzOeQFM8A2dZqWZMJM4QEhNao3hGadyu9i3iCZaTr8W/Txg4OQ7+1vepgTjCG3Xyb8r+uxhvEr8QEm+Y5i3YcBqSeGs6So5BFIvjgFeIv5bZU8yJDaBrU4JBRHepniUqsnVaZcLsujihddhi2rtOnyd0md83Fse82sAqXzVpxDfEeJOB+IbMtsXRIPH1O3yLvy2GpLh1XmPCmDLkt+cnz58/dw79c54V+HbyHGGn3I3lVyTC4++gDeRTDO9B/JSB+OsY0xaHmuT3p+L0kjWBkC1lsufOTV7eYUTKEzuXJy8rTLJattX2nS4zUF/xXYJmIhgA44kLGuDVBQMJ+T1z9g4w/S36KKZLkwGFTF7e2+k66NrZQ4cqnZOsN97v7LzcWYkPuNt7GuSJM7IW8PA0NqGdELYAeyaqvRNblQvRUZn4YDbL64hO8qfzAxuk8vVqfKA3VnLULzLOTArgFz2J2NuEdgL7JkxSmyXkj1MVJzz1Ufcor9+oxgPaM6ZmKZnNaW9jidMsb2TmPKb1NE/TX8evN6bKTnfqxq6u76epG9duXKuIohDIW5M0i8GJMyltYpJJcFsyc8L0q1povwjx4NoDs7neeXDtQF8p/3lwpyo3te5K1p3chgGvprS3E2p6O7ezrR2fk+U92mWn9v9By+6nmzdv6id68+anXUOvX/+9WZ1/mQHyDslYMFdtq7l5cmdijx4eHKgZDXVRTkyrs2Xk3f/dYeZ553+7JalM/PVI6MZMwNSL8vHetngwSY4vd17e2dmDxztde51Kut6R6dOAmbs2OdSc+7u7cIq7u/drd0uxC6fmTqgRFtnrSrbe+7i/p6bujwf35a4Pnfjixxp+97dCPpjC6Xrq+v7u9vbBwUHX/v5HaKiJj/v7+/B0AjbShD61X9sM880Qdz9PTcGEjf+gerOPDSUfwFz9+Tpqv4H/HBynfx438u7+52sPEJ/3mQjf/kdp/XTwE7qnEVm+f18uMRNpPY7/3pHD4XA4HM5RSA5BPCCQyiU95nyD/0/A8eJJQYZm+rOpbCZzmM70T2fS/a7DVAaRPsxkPFVukE9lpUAmAEAg64cPKpANAjCUgucgEPwWAo5ILgBcQwBkhiRXEKT6A4EkaZ6m1/1JPNsg/pCSSa0JDgoAKQuHAfjZDz+mkyA4gy6kh761jEoE0ocuP1Tod+VBLgUkF3ZOD1WYD/hT6AHk/ENZIA1JUHkyKU3n8EWkMOlJS0jhIRI6A4L9eFD/D+XhgcPD6WwaKkROBqSZpD+Vnk5ThYEUCPRD34OHh0l/WpJc/tyQYmGsEGRSig3zLqIwAPqT301OKdmZ/vT0UHo658K+l3QFMjPZXCZNL/tBdghgm0Fb+kEyjZpSjA3hM4GezSqUhpKp1HdSY0LQNR1MZaGXBl1B6Fr+Q1fwMAuNmVE6QCuqCuFlP1SQpTmIKIQPJUe81JPBCpN+eNcfyE3hw+9HCv0zHlc20D/jARk466yiMJcDAckDVUozQZDPSv4k8OczJJMcDoEgEguLTtCVlJIZGJFQGuzsd1VLxN+QYC7rCuBMk0y5XGhmyaymMOuaPjyE1vIEoeGSrnQaZiWoFmYlODKYl/J5ZCw/Os4jL88Hg37YhC59P0lG/OlpCUgekMqDQNLvgQYckkCOKpQQ8BPPWDmhCn8+/PhvMJtEFbt8MkyRfPMzk8wEKiX7ZNaT+4Fc8OtIZko0BHLfZSbHRz6V0oda6kfK/7XB70kPaSKTM5kKfX9aktnDVC7v9/vz2ZmfNHtWRcp7pl2I6f+oQILk9//nYpDD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4dSe/wOqvmCGxxqSIwAAAABJRU5ErkJggg==' /></div>
-        <div id="hr-line" />
+    <div className="direction-column">
+      <div className="header">
+        <Link to="/">
+          <img
+            id="awes-logo1"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYXPkS0A3dHiEnoy6TEfnAEzhTbFvIZNyCig&usqp=CAU"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+          />
+        </Link>
+        <div>
+          <span id="red">ARMY PUBLIC SCHOOL</span>
+          <span id="blue"> BAREILLY CANTONMENT</span>
+        </div>
+        <img
+          id="awes-logo2"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYXPkS0A3dHiEnoy6TEfnAEzhTbFvIZNyCig&usqp=CAU"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        />
       </div>
-      <img className="awes-logo" src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYXPkS0A3dHiEnoy6TEfnAEzhTbFvIZNyCig&usqp=CAU' data-aos="fade-left" data-aos-duration="1000" />
+      <div id="hr-line" />
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

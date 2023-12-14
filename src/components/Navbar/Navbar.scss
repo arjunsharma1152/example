@@ -1,70 +1,129 @@
 nav {
-    ul.navbar {
-        list-style-type: none;
-        display: flex;
-        justify-content: space-between;
+  ul.navbar {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0 5vw;
+
+    li {
+      border-radius: 20px;
+
+      a {
+        font-size: 1vw;
+        font-weight: bold;
+        display: block;
+        padding: 0.5vw 1vw;
+
+        &:hover {
+          color: rgb(2, 2, 100);
+        }
+      }
+
+      &.active {
+        background-color: rgb(2, 2, 100);
+
+        a {
+          color: white;
+        }
+      }
+
+      .sublinks {
+        width: auto;
+        min-width: 9vw;
+        display: none;
+        background: white;
+        border-radius: 10px;
+        box-shadow:
+          rgba(0, 0, 0, 0.25) 0px 54px 55px,
+          rgba(0, 0, 0, 0.12) 0px -12px 30px,
+          rgba(0, 0, 0, 0.12) 0px 4px 6px,
+          rgba(0, 0, 0, 0.17) 0px 12px 13px,
+          rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        position: absolute;
+        z-index: 1;
         padding: 0;
-        margin: 0 5vw;
 
         li {
-            border-radius: 20px;
+          list-style-type: none;
+          padding: 0.8vw;
+          font-size: 1vw;
 
-            a {
-                font-size: 1vw;
-                font-weight: bold;
-                display: block;
-                padding: 0.5vw 1vw;
+          &:hover {
+            font-weight: bold;
+            cursor: pointer;
+          }
 
-                &:hover {
-                    color: rgb(2, 2, 100);
-                }
+          a {
+            color: #333;
+            text-decoration: none;
+            padding: 0;
+            margin: 2px 0;
+
+            &:hover {
+              color: rgb(2, 2, 100);
             }
-
-            &.active {
-                background-color: rgb(2, 2, 100);
-
-                a {
-                    color: white;
-                }
-            }
-
-            .sublinks {
-                width: auto;
-                min-width: 9vw;
-                display: none;
-                background: white;
-                border-radius: 10px;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-                position: absolute;
-                z-index: 1;
-                padding: 0;
-
-                li {
-                    list-style-type: none;
-                    padding: 0.8vw;
-                    font-size: 1vw;
-
-                    &:hover {
-                        font-weight: bold;
-                        cursor: pointer;
-                    }
-
-                    a {
-                        color: #333;
-                        text-decoration: none;
-                        padding: 0;
-                        margin: 2px 0;
-
-                        &:hover {
-                            color: rgb(2, 2, 100);
-                        }
-                    }
-                }
-            }
-
-            &:hover .sublinks {
-                display: block;
-            }
+          }
         }
+      }
+
+      &:hover .sublinks {
+        display: block;
+      }
     }
+  }
+}
+
+img.hamburger {
+  height: 10vw;
+  width: 10vw;
+  display: none;
+  position: absolute;
+  top: 4vh;
+  right: 5vw;
+  z-index: 2;
+}
+
+.mobile-navbar {
+  display: none;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 10vh;
+  max-height: 50vh;
+  min-width: 100vw;
+  overflow: scroll;
+  border-radius: 10px;
+  box-shadow:
+    rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px,
+    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  z-index: 1;
+
+  h2 {
+    text-align: center;
+  }
+
+  &.active {
+    display: block;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  nav {
+    ul.navbar {
+      display: none;
+    }
+  }
+
+  img.hamburger {
+    display: block;
+  }
 }

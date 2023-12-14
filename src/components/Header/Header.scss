@@ -1,41 +1,55 @@
-.header{
-    display: flex;
-    padding: 0 1em;
-    justify-content: space-between;
-    font-size: 2.4vw;
-    font-weight: bold;
+.header {
+  min-width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 2.5vw;
+  font-weight: bold;
+  margin: 3vh 0 2vh 0;
+  align-items: center;
 }
 
-img.awes-logo{
-    width: 5vw;    
-    height: 6vw;
-    margin-top: 2vw;
+#awes-logo1,
+#awes-logo2 {
+  display: block;
+  width: 5vw;
+  height: 6vw;
 }
 
-img#g20{
-    width: 5vw;    
-    height: 6vw;
+#red {
+  color: #c21922;
 }
 
-#red{
-    color: #c21922;
+#blue {
+  color: rgb(2, 2, 100);
 }
 
-#blue{
-    color: rgb(2, 2, 100);
+.direction-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.direction-column{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;  
-    margin-top: 20px;
+#hr-line {
+  width: 92%;
+  height: 2px;
+  background-color: black;
+  margin-bottom: 10px;
 }
 
-#hr-line{
-    width: 179%;
-    height: 2px;
-    background-color: black;
-    margin-bottom: 10px;
+@media screen and (max-width: 480px) {
+  #awes-logo2,
+  #red,
+  #blue {
+    display: none;
+  }
+
+  #awes-logo1 {
+    width: 35px;
+    height: 45px;
+  }
+
+  .header {
+    justify-content: center;
+  }
 }

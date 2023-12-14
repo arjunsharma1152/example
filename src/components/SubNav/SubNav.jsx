@@ -1,19 +1,15 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const SubNav = ({ sublinks, visible }) => {
+const SubNav = ({ sublinks }) => {
+  return (
+    <ul className={`sublinks`}>
+      {sublinks.map((el, idx) => (
+        <li key={idx}>
+          <Link to={el.to}>{el.name}</Link>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
-    return (
-        <ul className={`sublinks ${visible}`}>
-            {sublinks.map((el, idx) => (
-                <li key={idx}>
-                    <Link to={el.to}>
-                        {el.name}
-                    </Link>
-                </li>
-            ))}
-        </ul>
-    )
-}
-
-export default SubNav
+export default SubNav;
